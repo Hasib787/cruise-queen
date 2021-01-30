@@ -138,6 +138,7 @@ nav ul li a:hover, a.active{
     border-radius: .7em;
 }
 .greetings{
+    margin-top:6.5em;
     color: green;
     text-align: center;
 }

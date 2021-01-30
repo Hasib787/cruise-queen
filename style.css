@@ -128,3 +128,11 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+#thank-you{
+    height:18.75em;
+    display: none;
+    text-align: center;
+    color: rgb(18, 134, 30);
+    background-color: rgb(244, 250, 244);
+    border-radius: .7em;
+}

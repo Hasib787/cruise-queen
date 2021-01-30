@@ -53,3 +53,13 @@ function getInputValue(ticket) {
     const ticketCount = parseInt(ticketInput.value);
     return ticketCount;
 }
+
+
+//BookNow event handler
+const bookNow = document.getElementById('book-now');
+bookNow.addEventListener('click', function () {
+    const bookingArea = document.getElementById('booking-area');
+    bookingArea.style.display = 'none';
+    const checkArea = document.getElementById('thank-you');
+    checkArea.style.display = 'block';
+});

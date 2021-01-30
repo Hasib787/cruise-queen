@@ -3,28 +3,53 @@ document.getElementById('firstClass-increase').addEventListener('click', functio
     ticketCountHandler('firstClass', true);
 });
 
+document.getElementById('economy-increase').addEventListener('click', function () {
+    ticketCountHandler('economy', true);
+});
 
 //Minus button event handler
 document.getElementById('firstClass-decrease').addEventListener('click', function () {
     ticketCountHandler('firstClass', false);
 });
 
-document.getElementById('economy-decrease').addEventListener('click',function(){
+document.getElementById('economy-decrease').addEventListener('click', function () {
     ticketCountHandler('economy', false);
 });
 
 
 //Ticket Count event handler
 function ticketCountHandler(ticket, isIncrease) {
-    const firstClassInput = document.getElementById(ticket + '-count');
-    const firstClassCount = parseInt(firstClassInput.value);
-    // const firstClassNewCount = firstClassCount + 1;
+    const ticketInput = document.getElementById(ticket + '-count');
+    const ticketCount = parseInt(ticketInput.value);
     if (isIncrease == true) {
-        firstClassNewCount = firstClassCount + 1;
-    } else if (isIncrease == false && firstClassCount > 0) {
-        firstClassNewCount = firstClassCount - 1;
+        ticketNewCount = ticketCount + 1;
+    } else if (isIncrease == false && ticketCount > 0) {
+        ticketNewCount = ticketCount - 1;
     }
-    firstClassInput.value = firstClassNewCount;
-    const subTotal = firstClassNewCount * 150;
-    document.getElementById('sub-total').innerText = subTotal;
+    ticketInput.value = ticketNewCount;
+    let subTotal = 0;
+    if (ticket == 'firstClass') {
+        subTotal = ticketNewCount * 150;
+    }
+    if (ticket == 'economy') {
+        subTotal = ticketNewCount * 100;
+    }
+    document.getElementById(ticket + '-total').innerText = subTotal;
+    calculateTotal();
+}
+
+
+//calculate total value
+function calculateTotal() {
+    const firstClassCount = getInputValue('firstClass');
+    const economyCount = getInputValue('economy');
+
+    const subTotalPrice = firstClassCount * 150 + economyCount * 100;
+    document.getElementById('sub-total').innerText = subTotalPrice;
+
+    const vat = Math.round(subTotalPrice * 0.1);
+    document.getElementById('vat').innerText = vat;
+
+    const grandTotal = subTotalPrice + vat;
+    document.getElementById('grand-total').innerText = grandTotal;
 }

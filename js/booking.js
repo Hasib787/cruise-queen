@@ -27,14 +27,6 @@ function ticketCountHandler(ticket, isIncrease) {
         ticketNewCount = ticketCount - 1;
     }
     ticketInput.value = ticketNewCount;
-    let subTotal = 0;
-    if (ticket == 'firstClass') {
-        subTotal = ticketNewCount * 150;
-    }
-    if (ticket == 'economy') {
-        subTotal = ticketNewCount * 100;
-    }
-    document.getElementById(ticket + '-total').innerText = subTotal;
     calculateTotal();
 }
 
@@ -52,4 +44,12 @@ function calculateTotal() {
 
     const grandTotal = subTotalPrice + vat;
     document.getElementById('grand-total').innerText = grandTotal;
+}
+
+
+//for ticket 
+function getInputValue(ticket) {
+    const ticketInput = document.getElementById(ticket + '-count');
+    const ticketCount = parseInt(ticketInput.value);
+    return ticketCount;
 }

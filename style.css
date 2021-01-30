@@ -37,6 +37,8 @@ nav ul li a{
 nav ul li a:hover, a.active{
     background-color: #E33741;
     border-radius: 5px;
+    text-decoration: none;
+    color: white;
 }
 .main-content{
     display: grid;

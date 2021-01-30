@@ -129,10 +129,15 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 #thank-you{
-    height:18.75em;
+    padding: 10px;
+    margin:9.5em 32em;
+    height:22em;
+    width: 22em;
     display: none;
-    text-align: center;
-    color: rgb(18, 134, 30);
     background-color: rgb(244, 250, 244);
     border-radius: .7em;
+}
+.greetings{
+    color: green;
+    text-align: center;
 }

@@ -62,4 +62,13 @@ bookNow.addEventListener('click', function () {
     bookingArea.style.display = 'none';
     const checkArea = document.getElementById('thank-you');
     checkArea.style.display = 'block';
+
+    const flyingInput=document.getElementById('grand-total').innerText = parseFloat(flyingInput);
+    const flying = document.getElementById('resultTotal')=parseFloat(flying);
+    document.getElementById('grand-total').innerText=flyingInput;
+    
+    
 });
+
+
+//Purchase event handler
